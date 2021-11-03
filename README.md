@@ -9,7 +9,9 @@
   <a href="#eyes-preview">Preview</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#art-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#fire-como-rodar-em-sua-maquina">Como Rodar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#gear-como-contribuir">Contribuiçôes</a>
+  <a href="#gear-como-contribuir">Contribuiçôes</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <a href="#-licença">Licença</a>
+
 </p>
 
 ---
@@ -110,7 +112,7 @@ $ npm run dev
 ```
 ---
 
-## 📄 Licença
+# 📄 Licença
 
 Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
 
