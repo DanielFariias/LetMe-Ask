@@ -110,7 +110,5 @@ $ npm run dev
 ```
 ---
 
----
-
 > Este projeto foi desenvolvido com ❤️ por **[Daniel Farias](https://github.com/DanielFariias)**, com o instrutor **[Diego Fernandes](https://www.linkedin.com/in/diego-schell-fernandes/) **durante a** [Next Level Week # 6 - Trilha ReactJS](https://nextlevelweek.com/)** da **[Rocketseat](https://rocketseat.com.br)** 💜 <br> 
 >Se te ajudou, dá ⭐, vai me ajudar também 😉
