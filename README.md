@@ -110,5 +110,11 @@ $ npm run dev
 ```
 ---
 
+## 📄 Licença
+
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
+
+---
+
 > Este projeto foi desenvolvido com ❤️ por **[Daniel Farias](https://github.com/DanielFariias)**, com o instrutor **[Diego Fernandes](https://www.linkedin.com/in/diego-schell-fernandes/) **durante a** [Next Level Week # 6 - Trilha ReactJS](https://nextlevelweek.com/)** da **[Rocketseat](https://rocketseat.com.br)** 💜 <br> 
->Se te ajudou, dá ⭐, vai me ajudar também 😉
+>Se te ajudou, dá ⭐, vai me ajudar também. 😉
