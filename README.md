@@ -58,12 +58,12 @@ Deploy no [Firebase](https://letmeask-f04c1.web.app/)
 ### Web Screenshot
 <div>
    <p align="center">
-      <img src=".github/cover.svg" width="400px" > 
-      <img src=".github/cover.svg" width="400px" > 
+      <img src=".github/cover.svg" width="360px" > 
+      <img src=".github/cover.svg" width="360px" > 
    </p>
    <p align="center">
-      <img src=".github/cover.svg" width="400px" > 
-      <img src=".github/cover.svg" width="400px" > 
+      <img src=".github/cover.svg" width="360px" > 
+      <img src=".github/cover.svg" width="360px" > 
    </p>   
 </div>
 
