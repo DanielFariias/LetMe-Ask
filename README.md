@@ -77,8 +77,8 @@ O Layout foi desenvolvido pelo [Tiago Luchtenberg](https://www.instagram.com/tia
 
 # :fire: Como rodar em sua maquina
 ## Você precisa já ter instalado <img src="https://4.bp.blogspot.com/-7eg7Qz3UeWM/UTioF3nxNGI/AAAAAAAAPZk/7H509R6acZU/s1600/gif+aviso.gif" width="40px">
-- git
-- NodeJS
+- [Git](https://git-scm.com/)
+- [NodeJS](https://nodejs.org/en/)
 - Package manager (NPM ou Yarn)
 
 No seu terminal:
