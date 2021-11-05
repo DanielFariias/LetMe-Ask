@@ -1,5 +1,5 @@
-import cx from 'classnames'
-import '../styles/question.scss';
+import cx from "classnames";
+import "../styles/question.scss";
 
 type QuestionsProps = {
   content: string;
@@ -9,20 +9,20 @@ type QuestionsProps = {
   };
   isAnswered?: boolean;
   isHighlighted?: boolean;
-}
+};
 export const Question: React.FC<QuestionsProps> = ({
   content,
   author,
   children,
   isAnswered = false,
-  isHighlighted = false
+  isHighlighted = false,
 }) => {
   return (
     <div
       className={cx(
-        'question',
+        "question",
         { answered: isAnswered },
-        { highlighted: isHighlighted && !isAnswered },
+        { highlighted: isHighlighted && !isAnswered }
       )}
     >
       <p>{content}</p>
@@ -31,10 +31,8 @@ export const Question: React.FC<QuestionsProps> = ({
           <img src={author.avatar} alt={author.name} />
           <span>{author.name}</span>
         </div>
-        <div>
-          {children}
-        </div>
+        <div>{children}</div>
       </footer>
-    </div >
-  )
-}
+    </div>
+  );
+};

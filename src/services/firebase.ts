@@ -1,7 +1,10 @@
 import firebase from "firebase/app";
 
-import 'firebase/auth'
-import 'firebase/database'
+// eslint-disable-next-line import/no-duplicates
+import "firebase/database";
+
+// eslint-disable-next-line import/no-duplicates
+import "firebase/auth";
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_API_KEY,
@@ -13,9 +16,9 @@ const firebaseConfig = {
   appId: import.meta.env.VITE_APP_ID,
 };
 
-firebase.initializeApp(firebaseConfig)
+firebase.initializeApp(firebaseConfig);
 
-const auth = firebase.auth()
-const database = firebase.database()
+const auth = firebase.auth();
+const database = firebase.database();
 
-export { firebase, auth, database }
+export { firebase, auth, database };
