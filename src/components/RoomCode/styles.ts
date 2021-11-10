@@ -1,14 +1,20 @@
-.room-code {
+import styled from "styled-components";
+
+export const Container = styled.button`
   height: 40px;
   border-radius: 8px;
   overflow: hidden;
-
 
   background: #ffffff;
   border: 1px solid #835afd;
   cursor: pointer;
 
   display: flex;
+  transition: 0.2s ease-in;
+
+  &:hover {
+    filter: brightness(0.9);
+  }
 
   div {
     height: 100%;
@@ -28,4 +34,4 @@
     font-size: 14px;
     font-weight: 500;
   }
-}
+`;

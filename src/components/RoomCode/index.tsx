@@ -1,19 +1,17 @@
-import React from "react";
-
-import copyImg from "../assets/images/copy.svg";
-import "../styles/room-code.scss";
+import copyImg from "../../assets/images/copy.svg";
+import * as C from "./styles";
 
 type RoomCodeProps = {
   code: string;
 };
 
-export const RoomCode: React.FC<RoomCodeProps> = ({ code }) => {
+export const RoomCode = ({ code }: RoomCodeProps): JSX.Element => {
   const copyRoomCodeToClipBoard = () => {
     navigator.clipboard.writeText(code);
   };
 
   return (
-    <button
+    <C.Container
       type="submit"
       className="room-code"
       onClick={copyRoomCodeToClipBoard}
@@ -22,6 +20,6 @@ export const RoomCode: React.FC<RoomCodeProps> = ({ code }) => {
         <img src={copyImg} alt="Copy room code" />
       </div>
       <span>Sala {code}</span>
-    </button>
+    </C.Container>
   );
 };
