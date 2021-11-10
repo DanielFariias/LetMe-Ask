@@ -1,28 +1,30 @@
-.question {
+import styled from "styled-components";
+
+export const Container = styled.div`
   background-color: #fefefe;
   border-radius: 8px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
   padding: 24px;
 
-  & + .question {
+  & + & {
     margin-top: 8px;
   }
 
   &.highlighted {
-    background: #F4F0FF;
-    border: 1px solid #835AFD;
-    
+    background: #f4f0ff;
+    border: 1px solid #835afd;
+
     footer .user-info span {
-      color: #29292E;
+      color: #29292e;
     }
   }
-  
+
   &.answered {
-    background: #DBDCDD;
+    background: #dbdcdd;
   }
 
   p {
-    columns: #29292e;
+    color: #29292e;
   }
 
   footer {
@@ -58,7 +60,7 @@
       cursor: pointer;
       gap: 8px;
       transition: 0.4s;
-      
+
       span {
         margin-bottom: -2.5px;
       }
@@ -77,8 +79,8 @@
         }
       }
       &:hover {
-        filter: brightness(.5);
+        filter: brightness(0.5);
       }
     }
   }
-}
+`;
