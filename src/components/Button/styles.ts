@@ -1,4 +1,6 @@
-.button {
+import styled from "styled-components";
+
+export const Container = styled.button`
   height: 50px;
   border-radius: 8px;
   background-color: #835afd;
@@ -18,7 +20,7 @@
   }
 
   &:not(:disabled):hover {
-    filter: brightness(0.85)
+    filter: brightness(0.85);
   }
 
   &:disabled {
@@ -29,6 +31,6 @@
   &.outlined {
     background-color: #fff;
     border: 1px solid #835afd;
-    color:#835afd;
+    color: #835afd;
   }
-}
+`;

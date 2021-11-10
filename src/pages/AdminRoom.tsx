@@ -56,7 +56,7 @@ export const AdminRoom: React.FC = () => {
           <img src={logoImg} alt="LetMe-ask" />
           <div className="">
             <RoomCode code={roomID} />
-            <Button isOutlined onClick={handleEndRoom}>
+            <Button type="submit" isOutlined onClick={handleEndRoom}>
               Encerrar Sala
             </Button>
           </div>
