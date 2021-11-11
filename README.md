@@ -35,7 +35,7 @@
 - [ ] thema dark / light
 - [ ] Versão PWA
 - [ ] Testar outros bancos de dados (supabase / firestore)
-- [ ] Styled-Components
+- [x] Styled-Components
 - [x] ESLint
 - [x] Github Bonito
 
