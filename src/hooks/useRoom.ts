@@ -57,7 +57,7 @@ export const useRoom = (roomID: string) => {
             isAnswered: value.isAnswered,
             likeCount: Object.values(value.likes ?? {}).length,
             likeId: Object.entries(value.likes ?? {}).find(
-              ([key, like]) => like.authorId === user?.id
+              ([, like]) => like.authorId === user?.id
             )?.[0],
           };
         }

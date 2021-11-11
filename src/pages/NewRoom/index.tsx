@@ -1,13 +1,12 @@
 import { FormEvent, useState } from "react";
 import { useHistory, Link } from "react-router-dom";
 
-import illustraationImg from "../assets/images/illustration.svg";
-import logoImg from "../assets/images/logo.svg";
-
-import "../styles/auth.scss";
-import { Button } from "../components/Button";
-import { useAuth } from "../hooks/useAuth";
-import { database } from "../services/firebase";
+import illustrationImg from "../../assets/images/illustration.svg";
+import logoImg from "../../assets/images/logo.svg";
+import { Button } from "../../components/Button";
+import { useAuth } from "../../hooks/useAuth";
+import { database } from "../../services/firebase";
+import * as C from "./styles";
 
 export const NewRoom: React.FC = () => {
   const history = useHistory();
@@ -32,19 +31,19 @@ export const NewRoom: React.FC = () => {
   };
 
   return (
-    <div id="page-auth">
-      <aside>
+    <C.Container>
+      <C.Aside>
         <img
-          src={illustraationImg}
+          src={illustrationImg}
           alt="Ilustração simbolizando perguntas e respostas"
         />
         <strong>Crie salas de Q&amp;A ao-vivo</strong>
-        <p>Tire as dúvidas de sua audiéncia em tempo-real</p>
-      </aside>
+        <p>Tire as dúvidas de sua audiência em tempo-real</p>
+      </C.Aside>
 
-      <main>
+      <C.Main>
         <div className="main-content">
-          <img src={logoImg} alt="Letmeask" />
+          <img src={logoImg} alt="LetMe-Ask" />
 
           <h2>Criar uma nova sala</h2>
           <form onSubmit={handleCreateRoom}>
@@ -61,7 +60,7 @@ export const NewRoom: React.FC = () => {
             Quer entrar em uma sala existente? <Link to="/">Clique aqui</Link>{" "}
           </p>
         </div>
-      </main>
-    </div>
+      </C.Main>
+    </C.Container>
   );
 };

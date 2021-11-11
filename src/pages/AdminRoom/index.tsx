@@ -1,16 +1,15 @@
 import { useHistory, useParams } from "react-router-dom";
 
-import answerImg from "../assets/images/answer.svg";
-import checkImg from "../assets/images/check.svg";
-import deleteImg from "../assets/images/delete.svg";
-import logoImg from "../assets/images/logo.svg";
-import { Button } from "../components/Button";
-import { Question } from "../components/Question";
-import { RoomCode } from "../components/RoomCode";
-import { useRoom } from "../hooks/useRoom";
-
-import "../styles/room.scss";
-import { database } from "../services/firebase";
+import answerImg from "../../assets/images/answer.svg";
+import checkImg from "../../assets/images/check.svg";
+import deleteImg from "../../assets/images/delete.svg";
+import logoImg from "../../assets/images/logo.svg";
+import { Button } from "../../components/Button";
+import { Question } from "../../components/Question";
+import { RoomCode } from "../../components/RoomCode";
+import { useRoom } from "../../hooks/useRoom";
+import { database } from "../../services/firebase";
+import * as C from "./styles";
 
 type RoomParams = {
   id: string;
@@ -50,8 +49,8 @@ export const AdminRoom: React.FC = () => {
   };
 
   return (
-    <div id="page-room">
-      <header>
+    <>
+      <C.Header>
         <div className="content">
           <img src={logoImg} alt="LetMe-ask" />
           <div className="">
@@ -61,9 +60,9 @@ export const AdminRoom: React.FC = () => {
             </Button>
           </div>
         </div>
-      </header>
+      </C.Header>
 
-      <main>
+      <C.Main>
         <div className="room-title">
           <h1>Sala {title}</h1>
           {questions.length > 0 && <span>{questions.length} pergunta(s)</span>}
@@ -108,7 +107,7 @@ export const AdminRoom: React.FC = () => {
             );
           })}
         </div>
-      </main>
-    </div>
+      </C.Main>
+    </>
   );
 };

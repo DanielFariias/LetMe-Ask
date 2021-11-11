@@ -1,9 +1,8 @@
+/* eslint-disable import/no-duplicates */
 import firebase from "firebase/app";
 
-// eslint-disable-next-line import/no-duplicates
 import "firebase/database";
 
-// eslint-disable-next-line import/no-duplicates
 import "firebase/auth";
 
 const firebaseConfig = {
