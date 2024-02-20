@@ -5,6 +5,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import { firebase } from '@/app/services/firebase'
 import { onValue, ref } from 'firebase/database'
+import toast from 'react-hot-toast'
 
 const formSchema = z.object({
   roomId: z.string().min(1, 'ID da sala é obrigatório.').trim(),
@@ -37,13 +38,11 @@ export function UseLoginController() {
       const room = snapshot.val()
 
       if (!room) {
-        // TODO: Use Toast instead of alert
-        return alert('Room does not exist.')
+        return toast.error('A sala não existe.')
       }
 
       if (room?.endedAt) {
-        // TODO: Use Toast instead of alert
-        return alert('Room already closed')
+        return toast.error('A sala já foi encerrada.')
       }
 
       navigate(`/room/${roomId}`)

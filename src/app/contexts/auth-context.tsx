@@ -3,6 +3,7 @@ import { ReactNode, createContext, useEffect, useState } from 'react'
 import { onAuthStateChanged, signInWithPopup } from 'firebase/auth'
 
 import { firebase } from '../services/firebase'
+import toast from 'react-hot-toast'
 
 interface IUser {
   id: string
@@ -22,17 +23,21 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(firebase.auth, (user) => {
-      if (user) {
-        const { displayName, photoURL, uid } = user
+      try {
+        if (user) {
+          const { displayName, photoURL, uid } = user
 
-        if (!displayName || !photoURL)
-          throw new Error('Missing information from Google Account.')
+          if (!displayName || !photoURL)
+            throw new Error('Missing information from Google Account.')
 
-        setUser({
-          id: uid,
-          name: displayName,
-          avatar: photoURL,
-        })
+          setUser({
+            id: uid,
+            name: displayName,
+            avatar: photoURL,
+          })
+        }
+      } catch (error) {
+        toast.error('Faltam informações da Conta do Google.')
       }
     })
 
@@ -59,8 +64,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         avatar: photoURL,
       })
     } catch (error) {
-      // TODO: Implement error handling with toast
-      console.error(error)
+      toast.error('Falha ao fazer login com conta do Google.')
     }
   }
 

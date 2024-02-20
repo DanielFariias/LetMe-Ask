@@ -1,6 +1,7 @@
 import { cn } from '@/app/utils/cn'
 import { Copy } from '@phosphor-icons/react'
 import { ComponentProps } from 'react'
+import toast from 'react-hot-toast'
 
 interface TButtonProps extends ComponentProps<'button'> {
   roomId: string
@@ -9,6 +10,7 @@ interface TButtonProps extends ComponentProps<'button'> {
 export function ClipboardButton({ roomId, className, ...props }: TButtonProps) {
   function handleCopyRoomCode() {
     navigator.clipboard.writeText(roomId)
+    toast('Código da sala copiado.')
   }
 
   return (
