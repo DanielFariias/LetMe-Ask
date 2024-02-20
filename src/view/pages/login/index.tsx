@@ -1,11 +1,18 @@
 import { Button } from '@/view/components/button'
 import { Input } from '@/view/components/input'
 import { GoogleLogo } from '@phosphor-icons/react'
+import { UseLoginController } from './use-login-controller'
 
 export function Login() {
+  const { handleCreateRoomWithGoogle, form } = UseLoginController()
+
   return (
     <>
-      <Button variant="danger" className="flex gap-4 justify-center">
+      <Button
+        variant="danger"
+        className="flex gap-4 justify-center"
+        onClick={handleCreateRoomWithGoogle}
+      >
         <GoogleLogo weight="bold" size={24} />
         Criar sua sala com o google
       </Button>
@@ -16,8 +23,12 @@ export function Login() {
         </p>
       </div>
 
-      <form className="space-y-4">
-        <Input name="room-id" placeholder="Código da sala" />
+      <form className="space-y-4" onSubmit={form.handleSubmit}>
+        <Input
+          placeholder="ID da sala"
+          {...form.register('roomId')}
+          error={form.errors.roomId?.message}
+        />
 
         <Button>Entrar na sala</Button>
       </form>
