@@ -3,6 +3,7 @@ import { ComponentProps } from 'react'
 
 const variants = {
   primary: 'bg-[#835AFD] hover:bg-[#6F4BD8]',
+  secondary: 'text-[#737380] bg-[#DBDCDD] hover:bg-[#CECECE]',
   danger: 'bg-[#E73F5D] hover:bg-[#D73754]',
   outline:
     'bg-transparent border border-[#835AFD] text-[#835AFD] hover:bg-[#835AFD] hover:text-white',
@@ -14,7 +15,7 @@ const sizes = {
 }
 
 interface TButtonProps extends ComponentProps<'button'> {
-  variant?: 'primary' | 'danger' | 'outline'
+  variant?: 'primary' | 'danger' | 'outline' | 'secondary'
   size?: 'md' | 'sm'
 }
 
