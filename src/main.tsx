@@ -1,15 +1,12 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react'
+import ReactDOM from 'react-dom/client'
 
-import "./services/firebase";
+import { App } from './app'
 
-import { App } from "./App";
-import { GlobalStyles } from "./styles/GlobalStyles";
+import './main.css'
 
-ReactDOM.render(
+ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <App />
-    <GlobalStyles />
   </React.StrictMode>,
-  document.getElementById("root")
-);
+)
