@@ -1,12 +1,13 @@
 import { AuthProvider } from '@/app/contexts/auth-context'
 import { Router } from '../app/router'
-import { Toaster } from 'react-hot-toast'
+import { BrowserRouter } from 'react-router-dom'
 
 export function App() {
   return (
-    <AuthProvider>
-      <Toaster />
-      <Router />
-    </AuthProvider>
+    <BrowserRouter>
+      <AuthProvider>
+        <Router />
+      </AuthProvider>
+    </BrowserRouter>
   )
 }

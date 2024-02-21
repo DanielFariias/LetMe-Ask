@@ -34,6 +34,7 @@ export function UseLoginController() {
 
   const handleSubmit = hookFormSubmit(async ({ roomId }) => {
     const roomRef = ref(firebase.db, `rooms/${roomId}`)
+
     onValue(roomRef, (snapshot) => {
       const room = snapshot.val()
 
@@ -48,6 +49,7 @@ export function UseLoginController() {
       navigate(`/room/${roomId}`)
     })
   })
+
   return {
     handleCreateRoomWithGoogle,
     form: {
