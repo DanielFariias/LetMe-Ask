@@ -20,7 +20,7 @@ export default function Modal({ open, onClose, children }: IModalProps) {
 
         <Dialog.Content
           className={cn(
-            'fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-16  bg-white rounded-lg z-[51] shadow-[0px_11px_20px_0px_rgba(0,0,0,0.10)] w-full max-w-[600px] outline-none',
+            'fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-16 bg-white rounded-lg z-[51] shadow-[0px_11px_20px_0px_rgba(0,0,0,0.10)] w-full max-w-[600px] outline-none',
             'data-[state=open]:animate-content-show',
           )}
         >

@@ -17,11 +17,13 @@ export function AdminRoom() {
           <>
             <Loader isLoading={isLoading} />
             {!isLoading && (
-              <main className="max-w-[800px] w-full flex flex-col items-center justify-center mx-auto">
+              <main className=" px-4 lg:px-0 max-w-[800px] w-full flex flex-col items-center justify-center mx-auto">
                 <section className="mt-16 w-full">
-                  <div className="flex gap-4">
-                    <h1 className="font-bold text-2xl">{roomTitle}</h1>
-                    <span className="rounded-full bg-[#E559F9] text-white py-2 px-4 text-sm">
+                  <div className="flex-col sm:flex-row sm:items-start flex gap-4">
+                    <h1 className="font-bold text-2xl text-center">
+                      {roomTitle}
+                    </h1>
+                    <span className="rounded-full bg-[#E559F9] text-white py-2 px-4 text-sm text-center">
                       {roomQuestions.length}
                       {roomQuestions.length === 1 ? ' Pergunta' : ' Perguntas'}
                     </span>
