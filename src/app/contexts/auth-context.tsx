@@ -1,4 +1,10 @@
-import { ReactNode, createContext, useEffect, useState } from 'react'
+import {
+  ReactNode,
+  createContext,
+  useCallback,
+  useEffect,
+  useState,
+} from 'react'
 
 import { onAuthStateChanged, signInWithPopup } from 'firebase/auth'
 
@@ -19,7 +25,15 @@ interface IAuthContextType {
 export const AuthContext = createContext({} as IAuthContextType)
 
 export function AuthProvider({ children }: { children: ReactNode }) {
-  const [user, setUser] = useState<IUser>()
+  const [user, setUser] = useState<IUser>(() => {
+    const user = localStorage.getItem('user')
+
+    if (user) {
+      return JSON.parse(user)
+    }
+
+    return undefined
+  })
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(firebase.auth, (user) => {
@@ -44,7 +58,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     return () => unsubscribe()
   }, [])
 
-  async function signInWithGoogle() {
+  const signInWithGoogle = useCallback(async () => {
     try {
       const { user } = await signInWithPopup(
         firebase.auth,
@@ -58,6 +72,15 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       if (!displayName || !photoURL)
         throw new Error('Missing information from Google Account.')
 
+      localStorage.setItem(
+        'user',
+        JSON.stringify({
+          id: uid,
+          name: displayName,
+          avatar: photoURL,
+        }),
+      )
+
       setUser({
         id: uid,
         name: displayName,
@@ -66,7 +89,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     } catch (error) {
       toast.error('Falha ao fazer login com conta do Google.')
     }
-  }
+  }, [])
 
   return (
     <AuthContext.Provider value={{ user, signInWithGoogle }}>
