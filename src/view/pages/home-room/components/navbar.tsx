@@ -1,11 +1,11 @@
 import { ClipboardButton } from '@/view/components/clipboard-button'
 
 import logoSvg from '@/app/assets/logo.svg'
-import { useParams } from 'react-router-dom'
+
+import { useHomeRoomController } from '../use-home-room-controller'
 
 export function Navbar() {
-  const params = useParams()
-  const id = params.id as string
+  const { id } = useHomeRoomController()
 
   return (
     <header className="border-b shadow-md">
