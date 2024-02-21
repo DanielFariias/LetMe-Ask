@@ -5,6 +5,7 @@ interface TButtonProps extends ComponentProps<'button'> {
   icon: React.ReactNode
   children?: React.ReactNode
   active?: boolean
+  onClick?: () => void
 }
 
 export function IconButton({
@@ -12,6 +13,7 @@ export function IconButton({
   className,
   active,
   icon,
+  onClick,
   ...props
 }: TButtonProps) {
   return (
@@ -22,6 +24,7 @@ export function IconButton({
         active && 'text-[#835AFD]',
         className,
       )}
+      onClick={onClick}
     >
       {children}
       {icon}
