@@ -1,15 +1,11 @@
 import { ClipboardButton } from '@/view/components/clipboard-button'
 
 import logoSvg from '@/app/assets/logo.svg'
-import { useParams } from 'react-router-dom'
 import { Button } from '@/view/components/button'
-import { useAdminRoomController } from '../use-admin-room-controller'
+import { UseAdminRoom } from './admin-room-context/use-admin-room'
 
 export function Navbar() {
-  const params = useParams()
-  const id = params.id as string
-
-  const { handleCloseRoom } = useAdminRoomController({ id })
+  const { id, handleOpenCloseRoomModal } = UseAdminRoom()
 
   return (
     <header className="border-b shadow-md">
@@ -18,7 +14,11 @@ export function Navbar() {
 
         <div className="flex gap-4">
           <ClipboardButton roomId={id} />
-          <Button variant="outline" size="sm" onClick={handleCloseRoom}>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={handleOpenCloseRoomModal}
+          >
             Encerrar sala
           </Button>
         </div>
