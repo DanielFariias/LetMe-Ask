@@ -17,7 +17,7 @@ export function ClipboardButton({ roomId, className, ...props }: TButtonProps) {
     <button
       {...props}
       className={cn(
-        'overflow-auto sm:overflow-visible flex items-center w-full rounded-lg font-medium transition-colors  bg-transparent border border-[#835AFD] text-[#835AFD] hover:bg-[#835AFD] hover:text-white disabled:bg-gray-300 disabled:cursor-not-allowed disabled:text-gray-500',
+        'overflow-auto sm:overflow-visible flex items-center h-[38px] w-full rounded-lg font-medium transition-colors  bg-transparent border border-[#835AFD] text-[#835AFD] hover:bg-[#835AFD] hover:text-white disabled:bg-gray-300 disabled:cursor-not-allowed disabled:text-gray-500',
         className,
       )}
       onClick={handleCopyRoomCode}
