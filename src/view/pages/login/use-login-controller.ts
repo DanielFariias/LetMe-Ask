@@ -35,7 +35,7 @@ export function UseLoginController() {
   const handleSubmit = hookFormSubmit(async ({ roomId }) => {
     const roomRef = ref(firebase.db, `rooms/${roomId}`)
 
-    onValue(roomRef, (snapshot) => {
+    const onValueRef = onValue(roomRef, (snapshot) => {
       const room = snapshot.val()
 
       if (!room) {
@@ -45,8 +45,8 @@ export function UseLoginController() {
       if (room?.endedAt) {
         return toast.error('A sala já foi encerrada.')
       }
-
       navigate(`/room/${roomId}`)
+      onValueRef()
     })
   })
 

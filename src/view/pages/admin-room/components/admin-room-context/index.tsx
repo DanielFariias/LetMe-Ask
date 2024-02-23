@@ -82,8 +82,10 @@ export function AdminRoomProvider({ children }: { children: React.ReactNode }) {
 
       let question = {} as IDatabaseQuestion
 
-      onValue(roomRef, (snapshot) => {
+      const onValueRef = onValue(roomRef, (snapshot) => {
         question = snapshot.val()
+
+        onValueRef()
       })
 
       if (question.isAnswered) {
@@ -101,8 +103,9 @@ export function AdminRoomProvider({ children }: { children: React.ReactNode }) {
 
       let question = {} as IDatabaseQuestion
 
-      onValue(roomRef, (snapshot) => {
+      const onValueRef = onValue(roomRef, (snapshot) => {
         question = snapshot.val()
+        onValueRef()
       })
 
       if (question.isHighlighted) {
@@ -135,7 +138,7 @@ export function AdminRoomProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const roomRef = ref(firebase.db, `rooms/${id}`)
 
-    onValue(roomRef, (snapshot) => {
+    const onValueRef = onValue(roomRef, (snapshot) => {
       const room = snapshot.val()
 
       if (room.authorId !== user?.id) {
@@ -162,6 +165,10 @@ export function AdminRoomProvider({ children }: { children: React.ReactNode }) {
       setRoomTitle(room.title)
       setRoomQuestions(parsedQuestions)
     })
+
+    return () => {
+      onValueRef()
+    }
   }, [id, user?.id])
 
   return (

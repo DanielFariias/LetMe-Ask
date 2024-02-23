@@ -93,9 +93,8 @@ export function useHomeRoomController() {
   useEffect(() => {
     const roomRef = ref(firebase.db, `rooms/${id}`)
 
-    onValue(roomRef, (snapshot) => {
+    const onValueRef = onValue(roomRef, (snapshot) => {
       const room = snapshot.val()
-      console.log('oi')
 
       if (room.endedAt) {
         navigate('/')
@@ -119,6 +118,10 @@ export function useHomeRoomController() {
       setRoomTitle(room.title)
       setRoomQuestions(parsedQuestions)
     })
+
+    return () => {
+      onValueRef()
+    }
   }, [id, navigate, user?.id])
 
   return {
