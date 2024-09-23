@@ -3,7 +3,6 @@ import { Router } from '../app/router'
 import { BrowserRouter } from 'react-router-dom'
 
 export function App() {
-  console.log('oi 4')
   return (
     <BrowserRouter>
       <AuthProvider>
